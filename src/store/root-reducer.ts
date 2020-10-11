@@ -1,15 +1,17 @@
-import {Action, Reducer} from "redux";
+import { Action, Reducer } from "redux";
 
 export interface InitialState {
+  data: string;
 }
 
 export const initialState: InitialState = {
+  data: "value",
 };
 
 export interface DispatchAction extends Action {
-    payload: Partial<InitialState>;
+  payload: Partial<InitialState>;
 }
 
-export const rootReducer: Reducer<InitialState, DispatchAction> = (state, action) => {
-    return initialState;
+export const rootReducer: Reducer<InitialState, DispatchAction> = () => {
+  return initialState;
 };
