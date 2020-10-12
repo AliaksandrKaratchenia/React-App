@@ -1,7 +1,7 @@
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Data from "./components/Data";
-import Settings from "./components/Settings";
+import Data from "./components/Data/Data";
+import Settings from "./components/Settings/Settings";
 import BreadCrumb from "./components/BreadCrumb";
 import React, { useState } from "react";
 import clsx from "clsx";
