@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const App: React.FC = () => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
