@@ -7,7 +7,6 @@ const BreadCrumb: React.FC = () => {
   const [items, setItems] = useState(["Home"]);
   const location = useLocation();
   useEffect(() => {
-    console.log(location);
     const paths =
       location.pathname === "/"
         ? ["Home"]

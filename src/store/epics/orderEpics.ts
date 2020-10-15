@@ -11,16 +11,14 @@ import {
 import { IState } from "../reducers";
 import { from, of } from "rxjs";
 import { isOfType } from "typesafe-actions";
+import config from "../../app.config.json";
 
 const loadOrderEpic: Epic<OrdersAction, OrdersAction, IState> = (action$) =>
   action$.pipe(
     filter(isOfType(OrdersActionTypes.LOAD_ORDERS)),
     switchMap(() =>
-      from(axios.get("http://localhost:5000/orders")).pipe(
-        map((response) => {
-            console.log(response.data, "Response");
-            return loadedOrders(response.data);
-        }),
+      from(axios.get(config.SERVER_URL)).pipe(
+        map(response => loadedOrders(response.data)),
         startWith(loadingOrders()),
         catchError(() => of(loadingOrdersFailed()))
       )

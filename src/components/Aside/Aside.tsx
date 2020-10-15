@@ -15,7 +15,7 @@ import StorageIcon from "@material-ui/icons/Storage";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { Link } from "react-router-dom";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme: Theme) => ({
   drawer: {

@@ -11,7 +11,7 @@ import { fade, Theme, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import Avatar from "@material-ui/core/Avatar/Avatar";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
