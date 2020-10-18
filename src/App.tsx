@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Routes from "./components/Routes";
 import Header from "./components/Header/Header";
 import Aside from "./components/Aside/Aside";
+import { useDispatch } from "react-redux";
+import { loadOrders } from "./store/actions/orderActions";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
+    height: "90vh"
   },
   toolbar: {
     display: "flex",
@@ -26,6 +29,11 @@ const useStyles = makeStyles((theme: Theme) => ({
 const App: React.FC = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadOrders());
+  }, []);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -36,16 +44,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <div className={classes.root}>
-        <CssBaseline />
-        <Header open={open} handleDrawerOpen={handleDrawerOpen} />
-        <Aside open={open} handleDrawerClose={handleDrawerClose} />
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <Routes />
-        </main>
-      </div>
+    <div className={classes.root}>
+      <CssBaseline />
+      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+      <Aside open={open} handleDrawerClose={handleDrawerClose} />
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <Routes />
+      </main>
     </div>
   );
 };
