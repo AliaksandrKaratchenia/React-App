@@ -23,7 +23,7 @@ export function loadedOrders(orders: IOrderItem[]): ILoadedOrdersAction {
   return {
     type: OrdersActionTypes.LOADED_ORDERS,
     payload: {
-      orders,
+      orders
     },
   };
 }

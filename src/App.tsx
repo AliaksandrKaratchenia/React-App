@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Aside from "./components/Aside/Aside";
 import { useDispatch } from "react-redux";
 import { loadOrders } from "./store/actions/orderActions";
+import SwipeableTemporaryDrawer from "./components/SwipeableDrawer/SwipeableDrawer";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -51,6 +52,7 @@ const App: React.FC = () => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Routes />
+        <SwipeableTemporaryDrawer />
       </main>
     </div>
   );
