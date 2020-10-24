@@ -1,0 +1,6 @@
+$header-zIndex: 101;
+
+.header.MuiPaper-root {
+  z-index: $header-zIndex;
+  box-shadow: none;
+}

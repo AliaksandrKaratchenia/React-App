@@ -6,6 +6,7 @@ import { CircularProgress, Typography } from '@material-ui/core';
 import { ColDef, RowData, SelectionChangeParams } from '@material-ui/data-grid';
 import DataGridWrapper from "../DataGrid/DataGridWrapper";
 import { openSwipeableDrawer } from "../../store/actions/swipeableDrawerActions";
+import { loadOrders } from "../../store/actions/orderActions";
 
 const columns: ColDef[] = [
   { field: 'id', hide: true, headerName: 'Order ids', type: 'number' },
@@ -22,13 +23,16 @@ const Data: React.FC = () => {
   const orders = useSelector<IState, IOrderItem[]>(state => state.orders.orders);
   const loadingStatus = useSelector<IState, ApiStatus>(state => state.orders.loadingStatus);
   const [rows, setRows] = useState<RowData[]>([]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadOrders());
+  }, []);
 
   useEffect(() => {
     const newRows = orders as RowData[];
     setRows(newRows);
   }, [orders]);
-
-  const dispatch = useDispatch();
 
   const handleSelectionChange = (param: SelectionChangeParams) => {
     const order = param.rows[0] as IOrderItem;
@@ -49,7 +53,7 @@ const Data: React.FC = () => {
   };
 
   return (
-    <div style={{ height: '90%', width: '100%' }}>
+    <div>
       {loadingStatus === ApiStatus.LOADING && <CircularProgress />}
 
       {loadingStatus === ApiStatus.FAILED && <Typography color="error">Failed to load todos</Typography>}

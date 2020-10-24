@@ -1,0 +1,12 @@
+.bread-crumb-container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  .current-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+  }
+}

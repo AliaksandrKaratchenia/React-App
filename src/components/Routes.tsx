@@ -6,7 +6,10 @@ import Settings from "./Settings/Settings";
 
 const Routes: React.FC = () => {
   const routesElement = useRoutes([
-    { path: "/", element: <Home /> },
+    {
+      path: "/",
+      element: <Home />
+    },
     {
       path: "data",
       element: <Data />,
@@ -18,4 +21,5 @@ const Routes: React.FC = () => {
   ]);
   return routesElement;
 };
+
 export default Routes;
