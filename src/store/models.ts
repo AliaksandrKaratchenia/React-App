@@ -2,6 +2,7 @@ export interface IOrderItem {
   id: number;
   order_status: number;
   order_date: Date;
+  required_date: Date;
   shipped_date: Date;
   sales_manager: string;
   customer_name: string;

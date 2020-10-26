@@ -1,6 +1,21 @@
-$header-zIndex: 101;
+@import '../../styles/styles.scss';
 
 .header.MuiPaper-root {
   z-index: $header-zIndex;
   box-shadow: none;
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+
+    .input-field {
+      border: 2px solid rgb(173, 216, 230);
+      border-radius: 15px;
+  
+      .search-icon {
+        padding: 6px;
+        color: $main-color;
+      }
+    }
+  }
 }
