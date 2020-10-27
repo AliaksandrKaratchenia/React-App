@@ -1,24 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { IOrderItem, ApiStatus, SwipeableDrawerCollapseDirection } from "../../store/models";
+import { IOrderItem, ApiStatus } from "../../store/models";
 import { IState } from "../../store/reducers";
 import { CircularProgress, Typography } from '@material-ui/core';
-import { ColDef, RowData, SelectionChangeParams } from '@material-ui/data-grid';
-import DataGridWrapper from "../DataGrid/DataGridWrapper";
-import { openSwipeableDrawer } from "../../store/actions/swipeableDrawerActions";
 import { loadOrders } from "../../store/actions/orderActions";
-import MUIDataTable, { MUIDataTableColumn, MUIDataTableColumnDef, MUIDataTableOptions } from "mui-datatables";
+import MUIDataTable, { MUIDataTableColumn, MUIDataTableOptions } from "mui-datatables";
+import SwipeableTemporaryDrawer, { SwipeableDrawerCollapseDirection } from "../SwipeableDrawer/SwipeableDrawer";
+import OrderDetails from "./OrderDetails/OrderDetails";
 
-// const columns: ColDef[] = [
-//   { field: 'id', hide: true, headerName: 'Order ids', type: 'number' },
-//   { field: 'order_status', headerName: 'Order status', type: 'number' },
-//   { field: 'order_date', headerName: 'Order date', type: 'date' },
-//   { field: 'shipped_date', hide: true, headerName: 'Shipped date', type: 'date' },
-//   { field: 'sales_manager', headerName: 'Sales manager', type: 'string' },
-//   { field: 'customer_name', hide: true, headerName: 'Customer name', type: 'string' },
-//   { field: 'email', hide: true, headerName: 'Customer Email', type: 'string' },
-//   { field: 'address', hide: true, headerName: 'Customer Address', type: 'string' }
-// ];
+interface ISelectedRow {
+  index: number,
+  dataIndex: number
+}
 
 const columns: MUIDataTableColumn[] = [
   {
@@ -70,57 +63,53 @@ const columns: MUIDataTableColumn[] = [
     }
   }];
 
-const options: MUIDataTableOptions = {
-  fixedHeader: true,
-  filter: true,
-  filterType: 'dropdown',
-  responsive: 'simple',
-  download: false,
-  resizableColumns: false,
-  search: false,
-  print: false,
-  selectableRows: 'single',
-  selectableRowsOnClick: true,
-  selectableRowsHideCheckboxes: true,
-  selectToolbarPlacement: 'none',
-  tableBodyMaxHeight: '200px'
-};
 
 
 const Data: React.FC = () => {
   const orders = useSelector<IState, IOrderItem[]>(state => state.orders.orders);
   const loadingStatus = useSelector<IState, ApiStatus>(state => state.orders.loadingStatus);
   const dispatch = useDispatch();
+  const [selection, setSelection] = useState<IOrderItem>();
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const options: MUIDataTableOptions = {
+    fixedHeader: true,
+    filter: true,
+    filterType: 'dropdown',
+    responsive: 'simple',
+    download: false,
+    resizableColumns: false,
+    search: false,
+    print: false,
+    selectableRows: 'single',
+    selectableRowsOnClick: true,
+    selectableRowsHideCheckboxes: true,
+    selectToolbarPlacement: 'none',
+    tableBodyMaxHeight: '70vh',
+    onRowSelectionChange: (currentRowsSelected: ISelectedRow[]) => {
+      const selectedOrder = orders[currentRowsSelected[0].dataIndex];
+      setSelection(selectedOrder);
+      setDetailsOpen(true);
+    }
+  };
+
+  const handleDetailsClose = () => {
+    setDetailsOpen(false);
+  }
 
   useEffect(() => {
     dispatch(loadOrders());
   }, []);
 
-  // const handleSelectionChange = (param: SelectionChangeParams) => {
-  //   const order = param.rows[0] as IOrderItem;
-  //   if (order) {
-  //     const jsxEl = (
-  //       <div>
-  //         <h1>Any title here</h1>
-  //         <p>{order.customer_name}</p>
-  //         <p>{order.address}</p>
-  //         <p>{order.sales_manager}</p>
-  //       </div>
-  //     );
-  //     dispatch(openSwipeableDrawer({
-  //       collapse_direction: SwipeableDrawerCollapseDirection.RIGHT,
-  //       content: jsxEl
-  //     }));
-  //   }
-  // };
-
   return (
     <div>
       {loadingStatus === ApiStatus.LOADING && <CircularProgress />}
 
-      {loadingStatus === ApiStatus.FAILED && <Typography color="error">Failed to load todos</Typography>}
+      {loadingStatus === ApiStatus.FAILED && <Typography color="error">Failed to load orders</Typography>}
 
       {loadingStatus === ApiStatus.LOADED && <MUIDataTable title={"Orders List"} data={orders} columns={columns} options={options} />}
+      <SwipeableTemporaryDrawer collapseDirection={SwipeableDrawerCollapseDirection.RIGHT} open={detailsOpen} onClose={handleDetailsClose}>
+        {selection && <OrderDetails order={selection} />}
+      </SwipeableTemporaryDrawer>
     </div>
   );
 };

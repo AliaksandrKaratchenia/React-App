@@ -10,18 +10,6 @@ export interface IOrderItem {
   address: string;
 }
 
-export interface ISwipeableDrawerModel {
-  collapse_direction: SwipeableDrawerCollapseDirection;
-  content: JSX.Element;
-}
-
-export enum SwipeableDrawerCollapseDirection {
-  TOP = "top",
-  BOTTOM = "bottom",
-  LEFT = "left",
-  RIGHT = "right"
-}
-
 export enum ApiStatus {
   LOADING = "loading",
   LOADED = "loaded",

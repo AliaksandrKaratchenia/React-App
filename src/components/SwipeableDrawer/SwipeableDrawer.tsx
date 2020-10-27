@@ -1,44 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import { ISwipeableDrawerModel } from '../../store/models';
-import { useDispatch, useSelector } from 'react-redux';
-import { IState } from '../../store/reducers';
-import { closeSwipeableDrawer } from '../../store/actions/swipeableDrawerActions';
+import { IconButton } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 
-const SwipeableTemporaryDrawer: React.FC = () => {
-    const swipeableDrawer = useSelector<IState, ISwipeableDrawerModel | undefined>(state => state.swipeableDrawer?.openDrawer); 
-    const dispatch = useDispatch();
+export enum SwipeableDrawerCollapseDirection {
+    TOP = "top",
+    BOTTOM = "bottom",
+    LEFT = "left",
+    RIGHT = "right"
+}
 
-    const closeDrawer = () => (
-        event: React.KeyboardEvent | React.MouseEvent,
-    ) => {
-        if (
-            event &&
-            event.type === 'keydown' &&
-            ((event as React.KeyboardEvent).key === 'Tab' ||
-                (event as React.KeyboardEvent).key === 'Shift')
-        ) {
-            return;
-        }
+interface SwipeableTemporaryDrawerProps {
+    collapseDirection: SwipeableDrawerCollapseDirection,
+    open: boolean,
+    onClose: () => void
+}
 
-        dispatch(closeSwipeableDrawer());
-    };
-
+const SwipeableTemporaryDrawer: React.FC<SwipeableTemporaryDrawerProps> = ({ collapseDirection, open, onClose, children }) => {
     return (
         <>
-            {swipeableDrawer &&
-                <SwipeableDrawer
-                    anchor={swipeableDrawer.collapse_direction}
-                    open={true}
-                    onOpen={() => { }}
-                    onClose={() => { }}
-                >
-                    <div>
-                        <Button onClick={closeDrawer()}>Close</Button>
-                        {swipeableDrawer.content}
-                    </div>
-                </SwipeableDrawer>}
+            <SwipeableDrawer
+                anchor={collapseDirection}
+                open={open}
+                onOpen={() => { }}
+                onClose={() => { }}
+            >
+                <div>
+                    <IconButton onClick={onClose}>
+                        <CloseIcon />
+                    </IconButton>
+                    {children}
+                </div>
+            </SwipeableDrawer>
         </>
     );
 }

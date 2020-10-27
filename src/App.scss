@@ -1,6 +1,9 @@
+@import "../src/styles/styles.scss";
+
 .root {
   display: flex;
-  height: 100vh;
+  height: 100%;
+  color: $main-color;
 
   .content {
     flex-grow: 1;

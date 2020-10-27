@@ -23,6 +23,15 @@ $border-radius: 20px;
     height: 100%;
     border-radius: $border-radius $border-radius 0 0;
     background: url('/sidebar_background.jpg');
+    color: white;
+
+    .MuiListItemIcon-root {
+      color: white;
+    }
+
+    .text-item {
+      white-space: normal;
+    }
 
     .menu-item {
       border-radius: $border-radius;
@@ -36,6 +45,11 @@ $border-radius: 20px;
 
       &:hover {
         background-color: white;
+        color: $main-color;
+
+        .MuiListItemIcon-root {
+          color: $main-color;
+        }
       }
     }
   }
