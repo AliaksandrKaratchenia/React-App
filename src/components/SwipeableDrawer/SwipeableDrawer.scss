@@ -1,0 +1,10 @@
+@import '../../styles/styles.scss';
+
+.swipeable-drawer {
+    .MuiPaper-root {
+        width: 100%;
+        @include min-device("tablet") { 
+            width: 50%;
+        }
+    }
+}

@@ -31,6 +31,17 @@ $border-radius: 20px;
 
     .text-item {
       white-space: normal;
+      height: 40%;
+    }
+
+    .text-item-close {
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0;
+
+      .MuiListItemIcon-root {
+        min-width: auto;
+      }
     }
 
     .menu-item {

@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from "react";
+import React, { useState } from "react";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import IconButton from "@material-ui/core/IconButton";
@@ -61,7 +61,10 @@ const SideBar: React.FC = () => {
       <Toolbar />
       <div className="sidebar-container">
         <List>
-          <ListItem className="text-item">
+          <ListItem className={classNames({
+            'text-item': true,
+            'text-item-close': !open
+          })}>
             {open ? <ListItemText primary={anyText} /> : <ListItemIcon><BeachAccessIcon fontSize="large" /></ListItemIcon>}
           </ListItem>
           {itemsList.map(item => (
