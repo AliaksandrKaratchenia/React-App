@@ -8,13 +8,37 @@
     display: flex;
     justify-content: space-between;
 
-    .input-field {
-      border: 2px solid rgb(173, 216, 230);
-      border-radius: 15px;
-  
-      .search-icon {
-        padding: 6px;
-        color: $main-color;
+    .right-side {
+      display: flex;
+      column-gap: 10px;
+
+      .input-field {
+        .MuiInput-input {
+          @include toggle-input($open: false);
+        }
+
+        &:hover {
+          border: 2px solid rgb(173, 216, 230);
+          border-radius: 15px;
+
+          .MuiInput-input {
+            @include toggle-input($open: true);
+          }
+        }
+    
+        .search-icon {
+          padding: 6px;
+          color: $main-color;
+        }
+      }
+
+      .Mui-focused {
+        border: 2px solid rgb(173, 216, 230);
+        border-radius: 15px;
+
+        .MuiInput-input {
+          @include toggle-input($open: true);
+        }
       }
     }
   }

@@ -12,11 +12,11 @@ const Routes: React.FC = () => {
     },
     {
       path: "data",
-      element: <Data />,
+      element: <Data />
     },
     {
       path: "settings",
-      element: <Settings />,
+      element: <Settings />
     },
   ]);
   return routesElement;

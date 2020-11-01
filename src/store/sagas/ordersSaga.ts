@@ -1,15 +1,14 @@
-import { call, put, takeEvery } from 'redux-saga/effects'
+import { call, put, takeEvery } from "redux-saga/effects";
 import axios from "axios";
 import {
   OrdersActionTypes,
   loadedOrders,
   loadingOrders,
-  loadingOrdersFailed,
-  ILoadOrdersAction
+  loadingOrdersFailed
 } from "../actions/orderActions";
 import config from "../../app.config.json";
 
-function* getOrders(action: ILoadOrdersAction) {
+function* getOrders() {
   try {
     yield put(loadingOrders());
     const response = yield call(axios.get, config.SERVER_URL);

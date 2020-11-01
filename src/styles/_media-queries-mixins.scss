@@ -5,7 +5,7 @@ $devices: (
   large-desktop: 1200px
 );
 
-@mixin min-device($device: map-get($devices, 'phone')) {
+@mixin min-device($device: map-get($devices, "phone")) {
   @if map-has-key($devices, $device) {
     @media screen and (min-width: map-get($devices, $device)) {
       @content;
@@ -13,7 +13,7 @@ $devices: (
   }
 }
 
-@mixin max-device($device: map-get($devices, 'phone')) {
+@mixin max-device($device: map-get($devices, "phone")) {
   @if map-has-key($devices, $device) {
     @media screen and (max-width: map-get($devices, $device) - 1) {
       @content;
@@ -21,7 +21,7 @@ $devices: (
   }
 }
 
-@mixin only-device($device: map-get($devices, 'phone')) {
+@mixin only-device($device: map-get($devices, "phone")) {
   @if map-has-key($devices, $device) {
     $devices-length: length($devices);
     $map-list: map-keys($devices);
@@ -42,8 +42,8 @@ $devices: (
 }
 
 @mixin between-devices(
-  $min-device: map-get($devices, 'phone'),
-  $max-device: map-get($devices, 'tablet')
+  $min-device: map-get($devices, "phone"),
+  $max-device: map-get($devices, "tablet")
 ) {
   @if map-has-key($devices, $min-device) and map-has-key($devices, $max-device)
   {

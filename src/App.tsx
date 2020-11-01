@@ -10,7 +10,7 @@ const App: React.FC = () => {
   return (
     <div className="root">
       <CssBaseline />
-      <Header/>
+      <Header />
       <SideBar />
       <main className="content">
         <Toolbar />

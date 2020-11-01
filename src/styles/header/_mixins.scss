@@ -1,0 +1,15 @@
+@mixin toggle-input($open: true) {
+    @if $open {
+      width: $header-input-open-width;
+      transition: $open-transition;
+
+      @include max-device("phone") {
+        width: $header-input-open-phone-width;
+        font-size: small;
+      }
+
+    } @else {
+      width: $header-input-close-width;
+      transition: $close-transition;
+    }
+  }

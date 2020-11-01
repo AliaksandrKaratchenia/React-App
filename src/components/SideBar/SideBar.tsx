@@ -12,70 +12,84 @@ import StorageIcon from "@material-ui/icons/Storage";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { Link } from "react-router-dom";
 import { Toolbar } from "@material-ui/core";
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import classNames from "classnames";
 import "./SideBar.scss";
 
 const anyText = "Some text here to show in sidebar as element";
 export interface ISidebarItem {
-  text: string,
-  icon: JSX.Element,
-  path: string
+  text: string;
+  icon: JSX.Element;
+  path: string;
 }
 
 export const itemsList: ISidebarItem[] = [
-    {
-      text: "Home",
-      icon: <HomeIcon />,
-      path: "/"
-    },
-    {
-      text: "Data",
-      icon: <StorageIcon />,
-      path: "/data"
-    },
-    {
-      text: "Settings",
-      icon: <SettingsIcon />,
-      path: "/settings"
-  
-    }
-  ];
+  {
+    text: "Home",
+    icon: <HomeIcon />,
+    path: "/"
+  },
+  {
+    text: "Data",
+    icon: <StorageIcon />,
+    path: "/data"
+  },
+  {
+    text: "Settings",
+    icon: <SettingsIcon />,
+    path: "/settings"
+  },
+];
 
 const SideBar: React.FC = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <Drawer variant="permanent"
+    <Drawer
+      variant="permanent"
       className={classNames({
-        'sidebar': true,
-        'sidebar-open': open,
-        'sidebar-close': !open
+        sidebar: true,
+        "sidebar-open": open,
+        "sidebar-close": !open,
       })}
       classes={{
         paper: classNames({
-          'sidebar-open': open,
-          'sidebar-close': !open,
-        })
-      }}>
+          "sidebar-open": open,
+          "sidebar-close": !open,
+        }),
+      }}
+    >
       <Toolbar />
       <div className="sidebar-container">
         <List>
-          <ListItem className={classNames({
-            'text-item': true,
-            'text-item-close': !open
-          })}>
-            {open ? <ListItemText primary={anyText} /> : <ListItemIcon><BeachAccessIcon fontSize="large" /></ListItemIcon>}
+          <ListItem
+            className={classNames({
+              "text-item": true,
+              "text-item-close": !open,
+            })}
+          >
+            {open ? (
+              <ListItemText primary={anyText} />
+            ) : (
+                <ListItemIcon>
+                  <BeachAccessIcon fontSize="large" />
+                </ListItemIcon>
+              )}
           </ListItem>
-          {itemsList.map(item => (
-            <ListItem className="menu-item" key={item.text} button component={Link} to={item.path}>
+          {itemsList.map((item) => (
+            <ListItem
+              className="menu-item"
+              key={item.text}
+              button
+              component={Link}
+              to={item.path}
+            >
               <ListItemIcon>{item.icon}</ListItemIcon>
               {open && <ListItemText primary={item.text} />}
             </ListItem>
           ))}
         </List>
-        <IconButton
-          onClick={() => setOpen(prev => !prev)}>
+        <IconButton onClick={() => setOpen((prev) => !prev)}>
           {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </IconButton>
       </div>

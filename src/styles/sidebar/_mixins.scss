@@ -1,0 +1,10 @@
+@mixin toggle-sidebar($open: true) {
+    @if $open {
+      width: $sidebar-open-width;
+      transition: $open-transition;
+    } @else {
+      width: $sidebar-close-width;
+      overflow-x: hidden;
+      transition: $close-transition;
+    }
+}
