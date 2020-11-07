@@ -7,6 +7,7 @@ import { loadOrders } from "../../store/actions/orderActions";
 import MUIDataTable, { MUIDataTableColumn, MUIDataTableOptions } from "mui-datatables";
 import SwipeableTemporaryDrawer, { SwipeableDrawerCollapseDirection } from "../SwipeableDrawer/SwipeableDrawer";
 import OrderDetails from "./OrderDetails/OrderDetails";
+import "./Data.scss";
 
 interface ISelectedRow {
   index: number,
@@ -63,8 +64,6 @@ const columns: MUIDataTableColumn[] = [
     }
   }];
 
-
-
 const Data: React.FC = () => {
   const orders = useSelector<IState, IOrderItem[]>(state => state.orders.orders);
   const loadingStatus = useSelector<IState, ApiStatus>(state => state.orders.loadingStatus);
@@ -84,7 +83,7 @@ const Data: React.FC = () => {
     selectableRowsOnClick: true,
     selectableRowsHideCheckboxes: true,
     selectToolbarPlacement: 'none',
-    tableBodyMaxHeight: '70vh',
+    tableBodyHeight: 'calc(100% - 120px)',
     onRowSelectionChange: (currentRowsSelected: ISelectedRow[]) => {
       const selectedOrder = orders[currentRowsSelected[0].dataIndex];
       setSelection(selectedOrder);
@@ -101,7 +100,7 @@ const Data: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className="data-page">
       {loadingStatus === ApiStatus.LOADING && <CircularProgress />}
 
       {loadingStatus === ApiStatus.FAILED && <Typography color="error">Failed to load orders</Typography>}

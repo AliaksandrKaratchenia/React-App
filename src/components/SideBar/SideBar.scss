@@ -73,6 +73,64 @@ $border-radius: 20px;
   }
 }
 
+.xs-sidebar {
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  .MuiPaper-root {
+    border: none;
+    z-index: $sidebar-zIndex;
+    background-color: inherit;
+
+    .xs-sidebar-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius $border-radius 0 0;
+      background: url('/sidebar_background.jpg');
+      color: white;
+
+      .MuiList-root {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 100%;
+
+        .MuiListItem-root {
+          padding: 0;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 50px;
+          display: flex;
+          justify-content: center;
+
+          .MuiListItemIcon-root {
+            min-width: auto;
+          }
+        }
+      }
+  
+      .MuiListItemIcon-root {
+        color: white;
+      }
+  
+      .xs-menu-item {
+        border-radius: $border-radius;
+  
+        &:hover {
+          background-color: white;
+          color: $main-color;
+  
+          .MuiListItemIcon-root {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
 .sidebar-open {
   @include toggle-sidebar($open: true);
 }

@@ -6,22 +6,22 @@ import {ISidebarItem, itemsList} from "../SideBar/SideBar";
 import "./BreadCrumb.scss";
 
 const BreadCrumb: React.FC = () => {
-  const [items, setItems] = useState<string[]>([]);
+  const [breadCrumbItems, setBreadCrumbItems] = useState<string[]>([]);
   const [page, setPage] = useState(itemsList[0]);
   const location = useLocation();
 
   useEffect(() => {
     let currentPage = itemsList[0];
-    let items = [currentPage.text];
+    let currentBreadCrumbItems = [currentPage.text];
     if (location.pathname.length > 1) {
       currentPage = itemsList.slice(1).find(item => location.pathname.startsWith(item.path)) ?? currentPage;
-      items = getItems(currentPage, location.pathname);
+      currentBreadCrumbItems = getBreadCrumbItems(currentPage, location.pathname);
     }
     setPage(currentPage)
-    setItems(items);
+    setBreadCrumbItems(currentBreadCrumbItems);
   }, [location.pathname]);
 
-  const getItems = (currentPage: ISidebarItem, pathname: string): string[] => {
+  const getBreadCrumbItems = (currentPage: ISidebarItem, pathname: string): string[] => {
     let items = pathname
         .slice(currentPage?.path.length)
         .split("/")
@@ -37,7 +37,7 @@ const BreadCrumb: React.FC = () => {
         <Typography>{page.text}</Typography>
       </div>
       <Breadcrumbs separator="›" aria-label="breadcrumb">
-        {items.map((text, index) => (
+        {breadCrumbItems.map((text, index) => (
           <span key={index}>{text}</span>
         ))}
       </Breadcrumbs>

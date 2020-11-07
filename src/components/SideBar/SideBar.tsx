@@ -11,12 +11,13 @@ import HomeIcon from "@material-ui/icons/Home";
 import StorageIcon from "@material-ui/icons/Storage";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { Link } from "react-router-dom";
-import { Toolbar } from "@material-ui/core";
+import { Hidden, Toolbar } from "@material-ui/core";
 import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import classNames from "classnames";
 import "./SideBar.scss";
 
 const anyText = "Some text here to show in sidebar as element";
+
 export interface ISidebarItem {
   text: string;
   icon: JSX.Element;
@@ -44,56 +45,84 @@ export const itemsList: ISidebarItem[] = [
 const SideBar: React.FC = () => {
   const [open, setOpen] = useState(true);
 
-  return (
-    <Drawer
-      variant="permanent"
-      className={classNames({
-        sidebar: true,
-        "sidebar-open": open,
-        "sidebar-close": !open,
-      })}
-      classes={{
-        paper: classNames({
+  return (<>
+    <Hidden xsDown>
+      <Drawer
+        variant="permanent"
+        className={classNames({
+          sidebar: true,
           "sidebar-open": open,
           "sidebar-close": !open,
-        }),
-      }}
-    >
-      <Toolbar />
-      <div className="sidebar-container">
-        <List>
-          <ListItem
-            className={classNames({
-              "text-item": true,
-              "text-item-close": !open,
-            })}
-          >
-            {open ? (
-              <ListItemText primary={anyText} />
-            ) : (
-                <ListItemIcon>
-                  <BeachAccessIcon fontSize="large" />
-                </ListItemIcon>
-              )}
-          </ListItem>
-          {itemsList.map((item) => (
+        })}
+        classes={{
+          paper: classNames({
+            "sidebar-open": open,
+            "sidebar-close": !open,
+          }),
+        }}
+      >
+        <Toolbar />
+        <div className="sidebar-container">
+          <List>
             <ListItem
-              className="menu-item"
-              key={item.text}
-              button
-              component={Link}
-              to={item.path}
+              className={classNames({
+                "text-item": true,
+                "text-item-close": !open,
+              })}
             >
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              {open && <ListItemText primary={item.text} />}
+              {open ? (
+                <ListItemText primary={anyText} />
+              ) : (
+                  <ListItemIcon>
+                    <BeachAccessIcon fontSize="large" />
+                  </ListItemIcon>
+                )}
             </ListItem>
-          ))}
-        </List>
-        <IconButton onClick={() => setOpen((prev) => !prev)}>
-          {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
-      </div>
-    </Drawer>
+            {itemsList.map((item) => (
+              <ListItem
+                className="menu-item"
+                key={item.text}
+                button
+                component={Link}
+                to={item.path}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                {open && <ListItemText primary={item.text} />}
+              </ListItem>
+            ))}
+          </List>
+          <IconButton onClick={() => setOpen((prev) => !prev)}>
+            {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </div>
+      </Drawer>
+    </Hidden>
+
+    <Hidden smUp>
+      <Drawer variant="permanent" anchor="bottom" className="xs-sidebar">
+        <div className="xs-sidebar-container">
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <BeachAccessIcon fontSize="large" />
+              </ListItemIcon>
+            </ListItem>
+            {itemsList.map((item) => (
+              <ListItem
+                className="xs-menu-item"
+                key={item.text}
+                button
+                component={Link}
+                to={item.path}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+              </ListItem>
+            ))}
+          </List>
+        </div>
+      </Drawer>
+    </Hidden>
+  </>
   );
 };
 export default SideBar;
