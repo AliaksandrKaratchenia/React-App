@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IOrderItem, ApiStatus } from "../../store/models";
-import { IState } from "../../store/reducers";
 import { CircularProgress, Typography } from '@material-ui/core';
-import { loadOrders } from "../../store/actions/orderActions";
 import MUIDataTable, { MUIDataTableColumn, MUIDataTableOptions } from "mui-datatables";
 import SwipeableTemporaryDrawer, { SwipeableDrawerCollapseDirection } from "../SwipeableDrawer/SwipeableDrawer";
 import OrderDetails from "./OrderDetails/OrderDetails";
 import "./Data.scss";
+import { loadOrders } from "../../store/slices/ordersSlice";
+import { ordersSelector } from "../../store/selectors/ordersSelector";
 
 interface ISelectedRow {
   index: number,
@@ -65,8 +65,7 @@ const columns: MUIDataTableColumn[] = [
   }];
 
 const Data: React.FC = () => {
-  const orders = useSelector<IState, IOrderItem[]>(state => state.orders.orders);
-  const loadingStatus = useSelector<IState, ApiStatus>(state => state.orders.loadingStatus);
+  const { orders, loadingStatus } = useSelector(ordersSelector);
   const dispatch = useDispatch();
   const [selection, setSelection] = useState<IOrderItem>();
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -83,7 +82,7 @@ const Data: React.FC = () => {
     selectableRowsOnClick: true,
     selectableRowsHideCheckboxes: true,
     selectToolbarPlacement: 'none',
-    tableBodyHeight: 'calc(100% - 120px)',
+    tableBodyHeight: 'calc(100% - 125px)',
     onRowSelectionChange: (currentRowsSelected: ISelectedRow[]) => {
       const selectedOrder = orders[currentRowsSelected[0].dataIndex];
       setSelection(selectedOrder);

@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import ordersReducer, { IOrderState, initialOrderState } from "./orderReducer";
+import { initialOrderState, IOrderState } from "../slices/ordersSlice";
+import ordersReducer from "../slices/ordersSlice";
 
 export interface IState {
   orders: IOrderState;

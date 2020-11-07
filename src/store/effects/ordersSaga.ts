@@ -1,12 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import axios from "axios";
-import {
-  OrdersActionTypes,
-  loadedOrders,
-  loadingOrders,
-  loadingOrdersFailed
-} from "../actions/orderActions";
 import config from "../../app.config.json";
+import { loadedOrders, loadingOrders, loadingOrdersFailed, loadOrders } from "../slices/ordersSlice";
 
 function* getOrders() {
   try {
@@ -19,7 +14,7 @@ function* getOrders() {
 }
 
 function* watchGetOrders() {
-  yield takeEvery(OrdersActionTypes.LOAD_ORDERS, getOrders);
+  yield takeEvery(loadOrders, getOrders);
 }
 
 export default watchGetOrders;
