@@ -33,11 +33,15 @@ const SwipeableTemporaryDrawer: React.FC<SwipeableTemporaryDrawerProps> = ({
         onOpen={() => {}}
         onClose={onClose}
       >
-        <div>
-          <IconButton className="close-button" onClick={onClose}>
-            <CloseIcon />
-          </IconButton>
-          <div style={{ padding: 20 }}>{children}</div>
+        <div className="container">
+          <div className="close-button">
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          <div className="children">
+            {children}
+          </div>
         </div>
       </SwipeableDrawer>
     </>

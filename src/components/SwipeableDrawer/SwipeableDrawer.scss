@@ -1,10 +1,29 @@
 @import '../../styles/styles.scss';
 
 .swipeable-drawer {
-    .MuiPaper-root {
-        width: 100%;
-        @include min-device("tablet") { 
-            width: 50%;
-        }
+  .MuiPaper-root {
+    width: 100%;
+    overflow: hidden;
+    @include min-device('tablet') {
+      width: 50%;
+      border-radius: 20px 0 0 0;
     }
+    .container {
+      height: 100%;
+      padding-left: 15px;
+      overflow: auto;
+
+      .close-button {
+        display: flex;
+        justify-content: flex-end;
+        background: white;
+        position: sticky;
+        top: 0;
+      }
+
+      .children {
+        height: 100%;
+      }
+    }
+  }
 }

@@ -91,9 +91,11 @@ const SideBar: React.FC = () => {
               </ListItem>
             ))}
           </List>
-          <IconButton onClick={() => setOpen((prev) => !prev)}>
-            {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
+          <div className="toggle-container">
+            <IconButton className="button" onClick={() => setOpen((prev) => !prev)}>
+              {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            </IconButton>
+          </div>
         </div>
       </Drawer>
     </Hidden>

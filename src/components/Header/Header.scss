@@ -10,9 +10,12 @@
 
     .right-side {
       display: flex;
+      align-items: center;
       column-gap: 10px;
 
       .input-field {
+        height: $header-input-height;
+
         .MuiInput-input {
           @include toggle-input($open: false);
         }
