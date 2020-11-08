@@ -2,13 +2,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ApiStatus, IOrderItem } from "../models";
 
 export interface IOrderState {
-    loadingStatus: ApiStatus;
     orders: IOrderItem[];
+    loadingOrdersStatus?: ApiStatus;
+    loadingOrderDetailsStatus?: ApiStatus;
+    errorMessage?: string;
+    selectedOrderDetails?: IOrderItem;
 };
 
 export const initialOrderState: IOrderState = {
-  loadingStatus: ApiStatus.LOADING,
-  orders: [],
+    orders: []
 };
 
 const ordersSlice = createSlice({
@@ -16,21 +18,45 @@ const ordersSlice = createSlice({
     initialState: initialOrderState,
     reducers: {
         loadOrders: state => {
-            state.loadingStatus = ApiStatus.LOADING;
+            state.loadingOrdersStatus = ApiStatus.LOADING;
         },
         loadingOrders: state => {
-            state.loadingStatus = ApiStatus.LOADING;
+            state.loadingOrdersStatus = ApiStatus.LOADING;
         },
-        loadingOrdersFailed: state => {
-            state.loadingStatus = ApiStatus.FAILED;
+        loadingOrdersFailed: (state, { payload }: PayloadAction<string>) => {
+            state.loadingOrdersStatus = ApiStatus.FAILED;
+            state.errorMessage = payload;
         },
         loadedOrders: (state, { payload }: PayloadAction<IOrderItem[]>) => {
-            state.loadingStatus = ApiStatus.LOADED;
+            state.loadingOrdersStatus = ApiStatus.LOADED;
             state.orders = payload;
+        },
+        loadOrderDetails: (state, { payload }: PayloadAction<number>) => {
+            state.loadingOrderDetailsStatus = ApiStatus.LOADING;
+        },
+        loadingOrderDetails: state => {
+            state.loadingOrderDetailsStatus = ApiStatus.LOADING;
+        },
+        loadingOrderDetailsFailed: (state, { payload }: PayloadAction<string>) => {
+            state.loadingOrderDetailsStatus = ApiStatus.FAILED;
+            state.errorMessage = payload;
+        },
+        loadedOrderDetails: (state, { payload }: PayloadAction<IOrderItem>) => {
+            state.loadingOrderDetailsStatus = ApiStatus.LOADED;
+            state.selectedOrderDetails = payload;
         }
     }
 })
 
-export const { loadOrders, loadingOrders, loadingOrdersFailed, loadedOrders } = ordersSlice.actions;
+export const {
+    loadOrders,
+    loadingOrders,
+    loadingOrdersFailed,
+    loadedOrders,
+    loadOrderDetails,
+    loadingOrderDetails,
+    loadingOrderDetailsFailed,
+    loadedOrderDetails
+} = ordersSlice.actions;
 
 export default ordersSlice.reducer;

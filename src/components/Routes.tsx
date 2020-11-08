@@ -1,8 +1,8 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Home from "./Home/Home";
-import Data from "./Data/Data";
-import Settings from "./Settings/Settings";
+import Home from "./Pages/Home/Home";
+import Data from "./Pages/Data/Data";
+import Settings from "./Pages/Settings/Settings";
 
 const Routes: React.FC = () => {
   const routesElement = useRoutes([

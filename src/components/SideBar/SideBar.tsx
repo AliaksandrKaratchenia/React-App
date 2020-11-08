@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import IconButton from "@material-ui/core/IconButton";
@@ -20,7 +20,7 @@ const anyText = "Some text here to show in sidebar as element";
 
 export interface ISidebarItem {
   text: string;
-  icon: JSX.Element;
+  icon: ReactNode;
   path: string;
 }
 

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import "./SwipeableDrawer.scss";
+import classNames from "classnames";
 
 export enum SwipeableDrawerCollapseDirection {
   TOP = "top",
@@ -14,12 +15,16 @@ export enum SwipeableDrawerCollapseDirection {
 interface SwipeableTemporaryDrawerProps {
   collapseDirection: SwipeableDrawerCollapseDirection;
   open: boolean;
+  title?: string;
+  icon?: ReactNode;
   onClose: () => void;
 }
 
 const SwipeableTemporaryDrawer: React.FC<SwipeableTemporaryDrawerProps> = ({
   collapseDirection,
   open,
+  title,
+  icon,
   onClose,
   children,
 }) => {
@@ -34,7 +39,14 @@ const SwipeableTemporaryDrawer: React.FC<SwipeableTemporaryDrawerProps> = ({
         onClose={onClose}
       >
         <div className="container">
-          <div className="close-button">
+          <div className={classNames({
+            "header": true,
+            "header-only-close": !(title || icon),
+          })}>
+            <div className="left-side">
+              {icon}
+              {title && <Typography>{title}</Typography>}
+            </div>
             <IconButton onClick={onClose}>
               <CloseIcon />
             </IconButton>

@@ -36,7 +36,7 @@ const BreadCrumb: React.FC = () => {
         {page.icon}
         <Typography>{page.text}</Typography>
       </div>
-      <Breadcrumbs separator="›" aria-label="breadcrumb">
+      <Breadcrumbs separator="›" className="bread-crumb" aria-label="breadcrumb">
         {breadCrumbItems.map((text, index) => (
           <span key={index}>{text}</span>
         ))}

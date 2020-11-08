@@ -1,0 +1,32 @@
+@import '../../styles/styles.scss';
+
+.tabs-header {
+  .MuiTabs-root {
+    min-height: auto;
+
+    .MuiTabs-fixed {
+      padding-top: 5px;
+      padding-left: 2px;
+
+      .MuiTabs-flexContainer {
+          column-gap: 3px;
+      }
+    }
+  }
+
+  .MuiButtonBase-root {
+    font-size: small;
+    border-radius: $border-radius $border-radius 0 0;
+    box-shadow: $inactive-tab-box-shadow;
+    min-height: auto;
+
+    &.Mui-selected {
+      color: $main-color;
+      box-shadow: $active-tab-box-shadow;
+    }
+  }
+
+  .MuiTabs-indicator {
+    display: none;
+  }
+}

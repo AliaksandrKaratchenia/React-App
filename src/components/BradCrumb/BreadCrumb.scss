@@ -8,5 +8,15 @@
     align-items: center;
     justify-content: center;
     column-gap: 15px;
+
+    .MuiSvgIcon-root, .MuiTypography-root {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  .bread-crumb {
+    font-size: small;
+    padding-top: 5px;
   }
 }

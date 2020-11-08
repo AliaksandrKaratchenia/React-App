@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { IOrderItem, ApiStatus } from "../../store/models";
+import { ApiStatus } from "../../../store/models";
 import { CircularProgress, Typography } from '@material-ui/core';
 import MUIDataTable, { MUIDataTableColumn, MUIDataTableOptions } from "mui-datatables";
-import SwipeableTemporaryDrawer, { SwipeableDrawerCollapseDirection } from "../SwipeableDrawer/SwipeableDrawer";
-import OrderDetails from "./OrderDetails/OrderDetails";
+import SwipeableTemporaryDrawer, { SwipeableDrawerCollapseDirection } from "../../SwipeableDrawer/SwipeableDrawer";
 import "./Data.scss";
-import { loadOrders } from "../../store/slices/ordersSlice";
-import { ordersSelector } from "../../store/selectors/ordersSelector";
+import { loadOrderDetails, loadOrders } from "../../../store/slices/ordersSlice";
+import { ordersSelector } from "../../../store/selectors/ordersSelector";
+import OrderDetails from "../../OrderDetails/OrderDetails";
+import DescriptionIcon from '@material-ui/icons/Description';
 
 interface ISelectedRow {
   index: number,
@@ -65,9 +66,8 @@ const columns: MUIDataTableColumn[] = [
   }];
 
 const Data: React.FC = () => {
-  const { orders, loadingStatus } = useSelector(ordersSelector);
+  const { orders, loadingOrdersStatus, errorMessage, selectedOrderDetails } = useSelector(ordersSelector);
   const dispatch = useDispatch();
-  const [selection, setSelection] = useState<IOrderItem>();
   const [detailsOpen, setDetailsOpen] = useState(false);
   const options: MUIDataTableOptions = {
     fixedHeader: true,
@@ -84,15 +84,13 @@ const Data: React.FC = () => {
     selectToolbarPlacement: 'none',
     tableBodyHeight: 'calc(100% - 125px)',
     onRowSelectionChange: (currentRowsSelected: ISelectedRow[]) => {
-      const selectedOrder = orders[currentRowsSelected[0].dataIndex];
-      setSelection(selectedOrder);
+      const selectedOrderID = orders[currentRowsSelected[0].dataIndex].id;
+      dispatch(loadOrderDetails(selectedOrderID));
       setDetailsOpen(true);
     }
   };
 
-  const handleDetailsClose = () => {
-    setDetailsOpen(false);
-  }
+  const handleDetailsClose = () => setDetailsOpen(false);  
 
   useEffect(() => {
     dispatch(loadOrders());
@@ -100,13 +98,18 @@ const Data: React.FC = () => {
 
   return (
     <div className="data-page">
-      {loadingStatus === ApiStatus.LOADING && <CircularProgress />}
+      {loadingOrdersStatus === ApiStatus.LOADING && <CircularProgress />}
 
-      {loadingStatus === ApiStatus.FAILED && <Typography color="error">Failed to load orders</Typography>}
+      {loadingOrdersStatus === ApiStatus.FAILED && <Typography color="error">Failed to load orders with error {errorMessage}</Typography>}
 
-      {loadingStatus === ApiStatus.LOADED && <MUIDataTable title={"Orders List"} data={orders} columns={columns} options={options} />}
-      <SwipeableTemporaryDrawer collapseDirection={SwipeableDrawerCollapseDirection.RIGHT} open={detailsOpen} onClose={handleDetailsClose}>
-        {selection && <OrderDetails order={selection} />}
+      {loadingOrdersStatus === ApiStatus.LOADED && <MUIDataTable title={"Orders List"} data={orders} columns={columns} options={options} />}
+      <SwipeableTemporaryDrawer
+        collapseDirection={SwipeableDrawerCollapseDirection.RIGHT}
+        title={"Order Details"}
+        icon={<DescriptionIcon/>}
+        open={detailsOpen}
+        onClose={handleDetailsClose}>
+        {selectedOrderDetails && <OrderDetails orderDetails={selectedOrderDetails} />}
       </SwipeableTemporaryDrawer>
     </div>
   );

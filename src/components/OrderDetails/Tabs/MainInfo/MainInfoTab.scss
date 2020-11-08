@@ -1,0 +1,42 @@
+@import '../../../../styles/styles.scss';
+
+.box-container {
+  width: 100%;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  &.hidden {
+    display: none;
+  }
+
+  .box-section {
+    padding: 10px;
+    border-radius: $border-radius;
+    box-shadow: $active-tab-box-shadow;
+
+    &.first {
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    &.last {
+      margin-bottom: 5px;
+    }
+
+    .MuiGrid-container {
+      row-gap: 12px;
+
+      .title {
+        color: gray;
+      }
+
+      .section-title {
+        padding-bottom: 8px;
+        font-size: large;
+        @extend .title;
+      }
+    }
+  }
+}
