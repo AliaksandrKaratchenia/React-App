@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ApiStatus } from "../../../store/models";
 import { CircularProgress, Typography } from '@material-ui/core';
 import MUIDataTable, { MUIDataTableColumn, MUIDataTableOptions } from "mui-datatables";
 import SwipeableTemporaryDrawer, { SwipeableDrawerCollapseDirection } from "../../SwipeableDrawer/SwipeableDrawer";
@@ -9,6 +8,8 @@ import { loadOrderDetails, loadOrders } from "../../../store/slices/ordersSlice"
 import { ordersSelector } from "../../../store/selectors/ordersSelector";
 import OrderDetails from "../../OrderDetails/OrderDetails";
 import DescriptionIcon from '@material-ui/icons/Description';
+import { ApiStatus } from "../../../store/models/apiStatus";
+import { IOrderItem } from "../../../store/models/orderItem";
 
 interface ISelectedRow {
   index: number,
@@ -69,6 +70,7 @@ const Data: React.FC = () => {
   const { orders, loadingOrdersStatus, errorMessage, selectedOrderDetails } = useSelector(ordersSelector);
   const dispatch = useDispatch();
   const [detailsOpen, setDetailsOpen] = useState(false);
+  const [orderItem, setOrderItem] = useState<IOrderItem>();
   const options: MUIDataTableOptions = {
     fixedHeader: true,
     filter: true,
@@ -84,8 +86,9 @@ const Data: React.FC = () => {
     selectToolbarPlacement: 'none',
     tableBodyHeight: 'calc(100% - 125px)',
     onRowSelectionChange: (currentRowsSelected: ISelectedRow[]) => {
-      const selectedOrderID = orders[currentRowsSelected[0].dataIndex].id;
-      dispatch(loadOrderDetails(selectedOrderID));
+      const selectedOrderItem = orders[currentRowsSelected[0].dataIndex];
+      setOrderItem(selectedOrderItem);
+      dispatch(loadOrderDetails(selectedOrderItem.id));
       setDetailsOpen(true);
     }
   };
@@ -109,7 +112,7 @@ const Data: React.FC = () => {
         icon={<DescriptionIcon/>}
         open={detailsOpen}
         onClose={handleDetailsClose}>
-        {selectedOrderDetails && <OrderDetails orderDetails={selectedOrderDetails} />}
+        {(selectedOrderDetails && orderItem) && <OrderDetails orderItem={orderItem} orderDetails={selectedOrderDetails} />}
       </SwipeableTemporaryDrawer>
     </div>
   );

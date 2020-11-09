@@ -1,15 +1,15 @@
 import React from "react";
-import { IOrderItem } from "../../../../store/models";
 import { Box, Grid, Divider } from "@material-ui/core";
 import "./MainInfoTab.scss";
 import classNames from "classnames";
+import { IOrderItem, OrderStatus } from "../../../../store/models/orderItem";
 
 interface IMainInfoTabProps {
     visible: boolean;
-    mainOrderInfo: IOrderItem;
+    orderItem: IOrderItem;
 }
 
-const MainInfoTab: React.FC<IMainInfoTabProps> = ({ visible, mainOrderInfo }) => {
+const MainInfoTab: React.FC<IMainInfoTabProps> = ({ visible, orderItem }) => {
     const noInfo = String.fromCharCode(8212);
     const { id,
         order_status,
@@ -19,7 +19,7 @@ const MainInfoTab: React.FC<IMainInfoTabProps> = ({ visible, mainOrderInfo }) =>
         sales_manager,
         customer_name,
         email,
-        address } = mainOrderInfo;
+        address } = orderItem;
     return (
         <Box className={classNames({
             "box-container": true,
@@ -34,7 +34,7 @@ const MainInfoTab: React.FC<IMainInfoTabProps> = ({ visible, mainOrderInfo }) =>
                     </Grid>
                     <Grid item xs={6}>
                         <div className="title">Order Status:</div>
-                        <div className="field-content">{order_status || noInfo}</div>
+                        <div className="field-content">{`${order_status} (${OrderStatus[order_status]})`}</div>
                     </Grid>
                     <Grid item xs={12}>
                         <Divider />

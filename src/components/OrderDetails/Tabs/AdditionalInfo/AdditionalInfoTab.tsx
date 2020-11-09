@@ -1,17 +1,16 @@
 import React from "react";
-import { IOrderItem } from "../../../../store/models";
 import { Box } from "@material-ui/core";
-import Divider from '@material-ui/core/Divider';
+import { IOrderDetails } from "../../../../store/models/orderDetails";
 
 interface IAdditionalInfoTabProps {
     visible: boolean;
-    additionalOrderInfo: IOrderItem;
+    orderDetails: IOrderDetails;
 }
 
-const AdditionalInfoTab: React.FC<IAdditionalInfoTabProps> = ({ visible, additionalOrderInfo }) => {
+const AdditionalInfoTab: React.FC<IAdditionalInfoTabProps> = ({ visible, orderDetails }) => {
     return (
         <Box hidden={!visible}>
-            AdditionalInfoTab {additionalOrderInfo.customer_name}
+            AdditionalInfoTab {orderDetails.info[0].store_name}
         </Box>
     );
 }

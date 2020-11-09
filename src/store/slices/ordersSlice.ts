@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ApiStatus, IOrderItem } from "../models";
+import { ApiStatus } from "../models/apiStatus";
+import { IOrderDetails } from "../models/orderDetails";
+import { IOrderItem } from "../models/orderItem";
 
 export interface IOrderState {
     orders: IOrderItem[];
     loadingOrdersStatus?: ApiStatus;
     loadingOrderDetailsStatus?: ApiStatus;
     errorMessage?: string;
-    selectedOrderDetails?: IOrderItem;
+    selectedOrderDetails?: IOrderDetails;
 };
 
 export const initialOrderState: IOrderState = {
@@ -41,7 +43,7 @@ const ordersSlice = createSlice({
             state.loadingOrderDetailsStatus = ApiStatus.FAILED;
             state.errorMessage = payload;
         },
-        loadedOrderDetails: (state, { payload }: PayloadAction<IOrderItem>) => {
+        loadedOrderDetails: (state, { payload }: PayloadAction<IOrderDetails>) => {
             state.loadingOrderDetailsStatus = ApiStatus.LOADED;
             state.selectedOrderDetails = payload;
         }

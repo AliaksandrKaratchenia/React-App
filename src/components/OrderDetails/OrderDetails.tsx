@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { IOrderItem } from "../../store/models";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { AppBar } from "@material-ui/core";
 import "./OrderDetails.scss";
 import MainInfoTab from "./Tabs/MainInfo/MainInfoTab";
 import AdditionalInfoTab from "./Tabs/AdditionalInfo/AdditionalInfoTab";
+import { IOrderDetails } from "../../store/models/orderDetails";
+import { IOrderItem } from "../../store/models/orderItem";
 
 interface IOrderDetailsProps {
-  orderDetails: IOrderItem;
+  orderItem: IOrderItem;
+  orderDetails: IOrderDetails;
 }
 
-const OrderDetails: React.FC<IOrderDetailsProps> = ({ orderDetails }) => {
+const OrderDetails: React.FC<IOrderDetailsProps> = ({ orderItem, orderDetails }) => {
   const [value, setValue] = useState(0);
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
@@ -29,8 +31,8 @@ const OrderDetails: React.FC<IOrderDetailsProps> = ({ orderDetails }) => {
           <Tab label="Additional Info" />
         </Tabs>
       </AppBar>
-        <MainInfoTab visible={value === 0} mainOrderInfo={orderDetails} />
-        <AdditionalInfoTab visible={value === 1} additionalOrderInfo={orderDetails} />
+        <MainInfoTab visible={value === 0} orderItem={orderItem} />
+        <AdditionalInfoTab visible={value === 1} orderDetails={orderDetails} />
     </>
   );
 };

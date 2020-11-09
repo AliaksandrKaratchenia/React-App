@@ -6,7 +6,7 @@ import { loadedOrders, loadingOrders, loadingOrdersFailed, loadOrders, loadOrder
 function* getOrders() {
   try {
     yield put(loadingOrders());
-    const response = yield call(axios.get, config.SERVER_URL);
+    const response = yield call(axios.get, `${config.SERVER_URL}/orders`);
     yield put(loadedOrders(response.data));
   } catch(error) {
     yield put(loadingOrdersFailed(error.message));
@@ -16,7 +16,7 @@ function* getOrders() {
 function* getOrderDetails({ payload }: ReturnType<typeof loadOrderDetails>) {
   try {
     yield put(loadingOrderDetails());
-    const response = yield call(axios.get, `${config.SERVER_URL}/${payload}`);
+    const response = yield call(axios.get, `${config.SERVER_URL}/orders_details/${payload}`);
     yield put(loadedOrderDetails(response.data));
   } catch(error) {
     yield put(loadingOrderDetailsFailed(error.message));
