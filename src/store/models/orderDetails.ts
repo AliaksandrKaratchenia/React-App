@@ -9,13 +9,13 @@ export interface ICategory {
 
 export interface IProduct {
   model_year: number;
+  product_name: string;
   categories: ICategory[];
 }
 
 export interface IOrderedProduct {
   quantity: number;
   list_price: number;
-  product_name: number;
   products: IProduct[];
 }
 

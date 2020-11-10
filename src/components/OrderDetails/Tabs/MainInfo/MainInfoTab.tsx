@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Divider } from "@material-ui/core";
-import "./MainInfoTab.scss";
+import "../CommonTabStyles.scss";
 import classNames from "classnames";
 import { IOrderItem, OrderStatus } from "../../../../store/models/orderItem";
 
@@ -30,7 +30,7 @@ const MainInfoTab: React.FC<IMainInfoTabProps> = ({ visible, orderItem }) => {
                     <Grid className="section-title" item xs={12}>Order Info</Grid>
                     <Grid item xs={4}>
                         <div className="title">Order Id:</div>
-                        <div className="field-content">{id || noInfo}</div>
+                        <div className="field-content">{id}</div>
                     </Grid>
                     <Grid item xs={4}>
                         <div className="title">Order Status:</div>

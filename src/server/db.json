@@ -2243,174 +2243,6 @@
     ],
     "orders_details": [
         {
-            "id": 1,
-            "info": [
-                {
-                    "store_name": "Santa Cruz Bikes",
-                    "email": "santacruz@bikes.shop",
-                    "state": "CA",
-                    "city": "Santa Cruz",
-                    "street": "3700 Portola Drive",
-                    "ordered_products": [
-                        {
-                            "quantity": 1,
-                            "list_price": 599.99,
-                            "product_name": 0.20,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Cruisers Bicycles",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Electra"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "quantity": 2,
-                            "list_price": 1799.99,
-                            "product_name": 0.07,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Mountain Bikes",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Trek"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "quantity": 2,
-                            "list_price": 1549.00,
-                            "product_name": 0.05,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Cyclocross Bicycles",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Surly"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "quantity": 2,
-                            "list_price": 599.99,
-                            "product_name": 0.05,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Cruisers Bicycles",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Electra"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "quantity": 1,
-                            "list_price": 2899.99,
-                            "product_name": 0.20,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Mountain Bikes",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Trek"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "info": [
-                {
-                    "store_name": "Baldwin Bikes",
-                    "email": "baldwin@bikes.shop",
-                    "state": "NY",
-                    "city": "Baldwin",
-                    "street": "4200 Chestnut Lane",
-                    "ordered_products": [
-                        {
-                            "quantity": 1,
-                            "list_price": 599.99,
-                            "product_name": 0.07,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Cruisers Bicycles",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Electra"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "quantity": 2,
-                            "list_price": 599.99,
-                            "product_name": 0.05,
-                            "products": [
-                                {
-                                    "model_year": 2016,
-                                    "categories": [
-                                        {
-                                            "category_name": "Cruisers Bicycles",
-                                            "brands": [
-                                                {
-                                                    "brand_name": "Electra"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": 3,
             "info": [
                 {
@@ -2423,9 +2255,10 @@
                         {
                             "quantity": 1,
                             "list_price": 999.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Surly Wednesday Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2443,9 +2276,10 @@
                         {
                             "quantity": 1,
                             "list_price": 599.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2477,9 +2311,10 @@
                         {
                             "quantity": 2,
                             "list_price": 749.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Ritchey Timberwolf Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2511,9 +2346,10 @@
                         {
                             "quantity": 2,
                             "list_price": 1549.00,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Surly Straggler - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2531,9 +2367,10 @@
                         {
                             "quantity": 1,
                             "list_price": 429.00,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Vine 8-Speed - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2551,9 +2388,10 @@
                         {
                             "quantity": 1,
                             "list_price": 599.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2585,9 +2423,10 @@
                         {
                             "quantity": 1,
                             "list_price": 449.00,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Western 3-Speed - Women's - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2605,9 +2444,10 @@
                         {
                             "quantity": 2,
                             "list_price": 549.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 21D - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2625,9 +2465,10 @@
                         {
                             "quantity": 1,
                             "list_price": 599.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2645,9 +2486,10 @@
                         {
                             "quantity": 2,
                             "list_price": 999.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Surly Wednesday Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2665,9 +2507,10 @@
                         {
                             "quantity": 2,
                             "list_price": 2999.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Trek Conduit+ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2699,9 +2542,10 @@
                         {
                             "quantity": 1,
                             "list_price": 529.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Electra Moto 1 - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2719,9 +2563,10 @@
                         {
                             "quantity": 1,
                             "list_price": 999.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Surly Wednesday Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2739,9 +2584,10 @@
                         {
                             "quantity": 2,
                             "list_price": 429.00,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Vine 8-Speed - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2773,9 +2619,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2793,9 +2640,10 @@
                         {
                             "quantity": 2,
                             "list_price": 599.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2827,9 +2675,10 @@
                         {
                             "quantity": 2,
                             "list_price": 3999.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Trek Slash 8 27.5 - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2861,9 +2710,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2895,9 +2745,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1799.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2915,9 +2766,10 @@
                         {
                             "quantity": 2,
                             "list_price": 269.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2935,9 +2787,10 @@
                         {
                             "quantity": 2,
                             "list_price": 599.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2969,9 +2822,10 @@
                         {
                             "quantity": 2,
                             "list_price": 2899.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Trek Fuel EX 8 29 - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -2989,9 +2843,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1680.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Surly Straggler 650b - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3023,9 +2878,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Cruiser 1 (24-Inch) - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3043,9 +2899,10 @@
                         {
                             "quantity": 2,
                             "list_price": 429.00,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Vine 8-Speed - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3063,9 +2920,10 @@
                         {
                             "quantity": 2,
                             "list_price": 599.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3083,9 +2941,10 @@
                         {
                             "quantity": 2,
                             "list_price": 599.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3117,9 +2976,10 @@
                         {
                             "quantity": 1,
                             "list_price": 469.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Surly Ice Cream Truck Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3151,9 +3011,10 @@
                         {
                             "quantity": 2,
                             "list_price": 549.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 21D - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3171,9 +3032,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1799.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3191,9 +3053,10 @@
                         {
                             "quantity": 2,
                             "list_price": 449.00,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Western 3-Speed - Women's - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3211,9 +3074,10 @@
                         {
                             "quantity": 2,
                             "list_price": 299.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (20-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3245,9 +3109,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1799.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3265,9 +3130,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Cruiser 1 (24-Inch) - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3285,9 +3151,10 @@
                         {
                             "quantity": 2,
                             "list_price": 269.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Electra Cruiser 1 (24-Inch) - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3305,9 +3172,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3339,9 +3207,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1799.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3359,9 +3228,10 @@
                         {
                             "quantity": 1,
                             "list_price": 299.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (20-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3379,9 +3249,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1320.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Heller Shagamaw Frame - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3399,9 +3270,10 @@
                         {
                             "quantity": 2,
                             "list_price": 599.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3433,9 +3305,10 @@
                         {
                             "quantity": 2,
                             "list_price": 749.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Ritchey Timberwolf Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3453,9 +3326,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3473,9 +3347,10 @@
                         {
                             "quantity": 1,
                             "list_price": 3999.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Trek Slash 8 27.5 - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3493,9 +3368,10 @@
                         {
                             "quantity": 2,
                             "list_price": 499.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Townie Original 7D - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3513,9 +3389,10 @@
                         {
                             "quantity": 2,
                             "list_price": 2999.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Trek Conduit+ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3547,9 +3424,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1549.00,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Surly Straggler - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3567,9 +3445,10 @@
                         {
                             "quantity": 2,
                             "list_price": 2999.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Trek Conduit+ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3601,9 +3480,10 @@
                         {
                             "quantity": 1,
                             "list_price": 2999.99,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Trek Conduit+ - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3621,9 +3501,10 @@
                         {
                             "quantity": 2,
                             "list_price": 1549.00,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Surly Straggler - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3655,9 +3536,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3675,9 +3557,10 @@
                         {
                             "quantity": 1,
                             "list_price": 429.00,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Vine 8-Speed - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3695,9 +3578,10 @@
                         {
                             "quantity": 1,
                             "list_price": 1549.00,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Surly Straggler - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3729,9 +3613,10 @@
                         {
                             "quantity": 2,
                             "list_price": 529.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Electra Moto 1 - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3749,9 +3634,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3783,9 +3669,10 @@
                         {
                             "quantity": 2,
                             "list_price": 2899.99,
-                            "product_name": 0.05,
+                            "discount": 0.05,
                             "products": [
                                 {
+                                    "product_name": "Trek Fuel EX 8 29 - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3803,9 +3690,10 @@
                         {
                             "quantity": 2,
                             "list_price": 299.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Electra Girl's Hawaii 1 (20-inch) - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3823,9 +3711,10 @@
                         {
                             "quantity": 1,
                             "list_price": 269.99,
-                            "product_name": 0.20,
+                            "discount": 0.20,
                             "products": [
                                 {
+                                    "product_name": "Electra Cruiser 1(24-Inch) - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3857,9 +3746,10 @@
                         {
                             "quantity": 2,
                             "list_price": 999.99,
-                            "product_name": 0.10,
+                            "discount": 0.10,
                             "products": [
                                 {
+                                    "product_name": "Surly Wednesday Frameset - 2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3877,9 +3767,10 @@
                         {
                             "quantity": 2,
                             "list_price": 449.00,
-                            "product_name": 0.07,
+                            "discount": 0.07,
                             "products": [
                                 {
+                                    "product_name": "Pure Cycles Western 3-Speed - Women's - 2015\/2016",
                                     "model_year": 2016,
                                     "categories": [
                                         {
@@ -3887,6 +3778,700 @@
                                             "brands": [
                                                 {
                                                     "brand_name": "Pure Cycles"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "info": [
+                {
+                    "store_name": "Baldwin Bikes",
+                    "email": "baldwin@bikes.shop",
+                    "state": "NY",
+                    "city": "Baldwin",
+                    "street": "4200 Chestnut Lane",
+                    "ordered_products": [
+                        {
+                            "quantity": 2,
+                            "list_price": 299.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Electra Girl's Hawaii 1 (20-inch) - 2015\/2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Children Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 1549.00,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Surly Straggler - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cyclocross Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Surly"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 269.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Children Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 269.99,
+                            "discount": 0.10,
+                            "products": [
+                                {
+                                    "product_name": "Electra Cruiser 1 (24-Inch) - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Children Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "info": [
+                {
+                    "store_name": "Baldwin Bikes",
+                    "email": "baldwin@bikes.shop",
+                    "state": "NY",
+                    "city": "Baldwin",
+                    "street": "4200 Chestnut Lane",
+                    "ordered_products": [
+                        {
+                            "quantity": 1,
+                            "list_price": 3999.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Trek Slash 8 27.5 - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Trek"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 749.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Ritchey Timberwolf Frameset - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Ritchey"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 549.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 21D - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 269.99,
+                            "discount": 0.07,
+                            "products": [
+                                {
+                                    "product_name": "Electra Cruiser 1 (24-Inch) - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Children Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "info": [
+                {
+                    "store_name": "Baldwin Bikes",
+                    "email": "baldwin@bikes.shop",
+                    "state": "NY",
+                    "city": "Baldwin",
+                    "street": "4200 Chestnut Lane",
+                    "ordered_products": [
+                        {
+                            "quantity": 1,
+                            "list_price": 1320.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Heller Shagamaw Frame - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Heller"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 449.00,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Pure Cycles William 3-Speed - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Pure Cycles"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 599.99,
+                            "discount": 0.07,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 7D EQ - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Comfort Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 1799.99,
+                            "discount": 0.07,
+                            "products": [
+                                {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Trek"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "info": [
+                {
+                    "store_name": "Baldwin Bikes",
+                    "email": "baldwin@bikes.shop",
+                    "state": "NY",
+                    "city": "Baldwin",
+                    "street": "4200 Chestnut Lane",
+                    "ordered_products": [
+                        {
+                            "quantity": 1,
+                            "list_price": 1320.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Heller Shagamaw Frame - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Heller"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 3999.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Trek Slash 8 27.5 - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Trek"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 269.99,
+                            "discount": 0.10,
+                            "products": [
+                                {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 469.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Surly Ice Cream Truck Frameset - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Surly"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "info": [
+                {
+                    "store_name": "Baldwin Bikes",
+                    "email": "baldwin@bikes.shop",
+                    "state": "NY",
+                    "city": "Baldwin",
+                    "street": "4200 Chestnut Lane",
+                    "ordered_products": [
+                        {
+                            "quantity": 2,
+                            "list_price": 549.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 21D - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Comfort Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 469.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Surly Ice Cream Truck Frameset - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Surly"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 269.99,
+                            "discount": 0.10,
+                            "products": [
+                                {
+                                    "product_name": "Electra Cruiser 1 (24-Inch) - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Children Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 1799.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Trek"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 269.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Electra Girl's Hawaii 1 (16-inch) - 2015\/2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "info": [
+                {
+                    "store_name": "Baldwin Bikes",
+                    "email": "baldwin@bikes.shop",
+                    "state": "NY",
+                    "city": "Baldwin",
+                    "street": "4200 Chestnut Lane",
+                    "ordered_products": [
+                        {
+                            "quantity": 1,
+                            "list_price": 599.99,
+                            "discount": 0.07,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 599.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 7D EQ - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "info": [
+                {
+                    "store_name": "Santa Cruz Bikes",
+                    "email": "santacruz@bikes.shop",
+                    "state": "CA",
+                    "city": "Santa Cruz",
+                    "street": "3700 Portola Drive",
+                    "ordered_products": [
+                        {
+                            "quantity": 1,
+                            "list_price": 599.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 7D EQ - Women's - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 1799.99,
+                            "discount": 0.07,
+                            "products": [
+                                {
+                                    "product_name": "Trek Remedy 29 Carbon Frameset - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Trek"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 1549.00,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Surly Straggler - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cyclocross Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Surly"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 2,
+                            "list_price": 599.99,
+                            "discount": 0.05,
+                            "products": [
+                                {
+                                    "product_name": "Electra Townie Original 7D EQ - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Cruisers Bicycles",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Electra"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "quantity": 1,
+                            "list_price": 2899.99,
+                            "discount": 0.20,
+                            "products": [
+                                {
+                                    "product_name": "Trek Fuel EX 8 29 - 2016",
+                                    "model_year": 2016,
+                                    "categories": [
+                                        {
+                                            "category_name": "Mountain Bikes",
+                                            "brands": [
+                                                {
+                                                    "brand_name": "Trek"
                                                 }
                                             ]
                                         }

@@ -4,7 +4,7 @@ import Tab from '@material-ui/core/Tab';
 import { AppBar } from "@material-ui/core";
 import "./OrderDetails.scss";
 import MainInfoTab from "./Tabs/MainInfo/MainInfoTab";
-import AdditionalInfoTab from "./Tabs/AdditionalInfo/AdditionalInfoTab";
+import DetailedInfoTab from "./Tabs/DetailedInfo/DetailedInfoTab";
 import { IOrderDetails } from "../../store/models/orderDetails";
 import { IOrderItem } from "../../store/models/orderItem";
 
@@ -28,11 +28,11 @@ const OrderDetails: React.FC<IOrderDetailsProps> = ({ orderItem, orderDetails })
           selectionFollowsFocus={false}
         >
           <Tab label="Main Info" />
-          <Tab label="Additional Info" />
+          <Tab label="Detailed Info" />
         </Tabs>
       </AppBar>
         <MainInfoTab visible={value === 0} orderItem={orderItem} />
-        <AdditionalInfoTab visible={value === 1} orderDetails={orderDetails} />
+        <DetailedInfoTab visible={value === 1} orderItem={orderItem} orderDetails={orderDetails} />
     </>
   );
 };
