@@ -28,11 +28,11 @@ const MainInfoTab: React.FC<IMainInfoTabProps> = ({ visible, orderItem }) => {
             <Box className="box-section first">
                 <Grid container>
                     <Grid className="section-title" item xs={12}>Order Info</Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <div className="title">Order Id:</div>
                         <div className="field-content">{id || noInfo}</div>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <div className="title">Order Status:</div>
                         <div className="field-content">{`${order_status} (${OrderStatus[order_status]})`}</div>
                     </Grid>

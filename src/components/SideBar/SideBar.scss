@@ -13,6 +13,7 @@
   }
 
   .sidebar-container {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,24 +21,51 @@
     height: 100%;
     border-radius: $border-radius $border-radius 0 0;
     background: url('/sidebar_background.jpg');
-    color: white;
+    color: $sidebar-items-color;
 
     .MuiListItemIcon-root, .MuiIconButton-root {
-      color: white;
+      color: $sidebar-items-color;
     }
 
     .text-item {
       white-space: normal;
-      height: 40%;
+      height: 90px;
     }
 
     .text-item-close {
-      align-items: flex-start;
-      justify-content: center;
-      padding: 0;
+      .MuiListItemText-root {
+        @include reset-element-size();
+        transition: $close-transition;
+      }
 
       .MuiListItemIcon-root {
-        min-width: auto;
+        width: $sidebar-open-width;
+        transition: $close-transition;
+
+        .MuiSvgIcon-root {
+          margin-left: -0.4em;
+          height: 40px;
+          width: 40px;
+          transition: $close-transition;
+        }
+      }
+    }
+
+    .text-item-open {
+      .MuiListItemText-root {
+        width: $sidebar-open-width;
+        transition: $open-transition;
+      }
+
+      .MuiListItemIcon-root {
+        @include reset-element-size();
+        min-width: 0;
+        transition: $open-transition;
+
+        .MuiSvgIcon-root {
+          @include reset-element-size();
+          transition: $open-transition;
+        }
       }
     }
 
@@ -57,7 +85,7 @@
       }
 
       &:hover {
-        background-color: white;
+        background-color: $sidebar-items-color;
         color: $main-color;
 
         .MuiListItemIcon-root {
@@ -75,7 +103,7 @@
         padding-right: 16px;
 
         &:hover {
-          background-color: white;
+          background-color: $sidebar-items-color;
           color: $main-color;
         }
       }
@@ -110,7 +138,7 @@
       height: 100%;
       border-radius: $border-radius $border-radius 0 0;
       background: url('/sidebar_background.jpg');
-      color: white;
+      color: $sidebar-items-color;
 
       .MuiList-root {
         display: flex;
@@ -134,14 +162,14 @@
       }
   
       .MuiListItemIcon-root {
-        color: white;
+        color: $sidebar-items-color;
       }
   
       .xs-menu-item {
         border-radius: 50%;
   
         &:hover {
-          background-color: white;
+          background-color: $sidebar-items-color;
           color: $main-color;
   
           .MuiListItemIcon-root {

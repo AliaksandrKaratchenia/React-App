@@ -8,3 +8,9 @@
       transition: $close-transition;
     }
 }
+
+@mixin reset-element-size() {
+  width: 0;
+  height: 0;
+  padding: 0;
+}

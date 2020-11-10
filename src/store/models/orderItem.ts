@@ -1,3 +1,10 @@
+export enum OrderStatus {
+    Pending = 1,
+    Processing = 2,
+    Rejected = 3,
+    Completed = 4
+}
+
 export interface IOrderItem {
     id: number;
     order_status: OrderStatus;
@@ -8,11 +15,4 @@ export interface IOrderItem {
     customer_name: string;
     email: string;
     address: string;
-}
-
-export enum OrderStatus {
-    Pending = 1,
-    Processing = 2,
-    Rejected = 3,
-    Completed = 4
 }

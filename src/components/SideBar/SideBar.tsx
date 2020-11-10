@@ -67,16 +67,14 @@ const SideBar: React.FC = () => {
             <ListItem
               className={classNames({
                 "text-item": true,
-                "text-item-close": !open,
+                "text-item-open": open,
+                "text-item-close": !open
               })}
             >
-              {open ? (
-                <ListItemText primary={anyText} />
-              ) : (
-                  <ListItemIcon>
-                    <BeachAccessIcon fontSize="large" />
-                  </ListItemIcon>
-                )}
+              <ListItemIcon>
+                <BeachAccessIcon />
+              </ListItemIcon>
+              <ListItemText primary={anyText} />
             </ListItem>
             {itemsList.map((item) => (
               <ListItem
@@ -87,7 +85,7 @@ const SideBar: React.FC = () => {
                 to={item.path}
               >
                 <ListItemIcon>{item.icon}</ListItemIcon>
-                {open && <ListItemText primary={item.text} />}
+                <ListItemText primary={item.text} />
               </ListItem>
             ))}
           </List>

@@ -1,5 +1,11 @@
 .data-page {
+  height: calc(100vh - 65px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .MuiPaper-root {
-    height: 90vh;
+    height: 100%;
+    width: 100%;
   }
 }

@@ -93,15 +93,16 @@ const Data: React.FC = () => {
     }
   };
 
-  const handleDetailsClose = () => setDetailsOpen(false);  
+  const handleDetailsClose = () => setDetailsOpen(false); 
 
   useEffect(() => {
     dispatch(loadOrders());
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div className="data-page">
-      {loadingOrdersStatus === ApiStatus.LOADING && <CircularProgress />}
+      {loadingOrdersStatus === ApiStatus.LOADING && <CircularProgress thickness={2} size="70px" />}
 
       {loadingOrdersStatus === ApiStatus.FAILED && <Typography color="error">Failed to load orders with error {errorMessage}</Typography>}
 
