@@ -1,0 +1,51 @@
+@import '../../styles/styles.scss';
+
+.MuiStepper-root {
+  .hidden {
+    display: none;
+
+    & + .MuiStepConnector-root {
+     display: none;
+    }
+  }
+
+  &.main-variant {
+    color: $main-color;
+
+    .MuiStep-root {
+      .MuiStepButton-root {
+        padding-left: 0;
+
+        .step-icon {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          z-index: 1;
+          align-items: center;
+          border-radius: 50%;
+          justify-content: center;
+          border: 2px solid $main-color;
+        }
+      }
+
+      &.active {
+        border: 2px solid $main-color;
+        border-radius: 10px;
+        padding-bottom: 10px;
+
+        .step-icon {
+          border: none;
+        }
+
+        .MuiStepContent-root {
+          border: none;
+        }
+      }
+    }
+
+    .MuiStepConnector-line {
+      border-left-width: 2px;
+      border-color: $main-color;
+    }
+  }
+}

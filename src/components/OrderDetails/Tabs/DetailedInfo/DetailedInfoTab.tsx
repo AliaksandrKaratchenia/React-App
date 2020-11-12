@@ -3,7 +3,14 @@ import { Box, Divider, Grid } from "@material-ui/core";
 import { IOrderDetails, IOrderedProduct } from "../../../../store/models/orderDetails";
 import classNames from "classnames";
 import "../CommonTabStyles.scss";
-import { IOrderItem } from "../../../../store/models/orderItem";
+import { IOrderItem, OrderStatus } from "../../../../store/models/orderItem";
+import Timeline from "../../../Timeline/Timeline";
+import { TimelineDefinition, TimelineVariant } from "../../../Timeline/timelineDefinition";
+import DoneIcon from '@material-ui/icons/Done';
+import WatchLaterIcon from '@material-ui/icons/WatchLater';
+import AutorenewIcon from '@material-ui/icons/Autorenew';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import SendIcon from '@material-ui/icons/Send';
 
 interface IDetailedInfoTabProps {
     visible: boolean;
@@ -11,9 +18,48 @@ interface IDetailedInfoTabProps {
     orderItem: IOrderItem;
 }
 
+const getTimelines = (orderItem: IOrderItem) => {
+    const { order_status, order_date, required_date, shipped_date } = orderItem;
+    const timelines: TimelineDefinition[] = [];
+    if (order_status >= 1) {
+        const el: TimelineDefinition = {
+            lineDotIcon: <WatchLaterIcon />,
+            content: <div>Order date: {order_date}</div>,
+            labelComponent: <div><span>{OrderStatus[1]}</span> <DoneIcon fontSize="small" htmlColor="green" /></div>
+        };
+        timelines.push(el);
+    }
+    if (order_status >= 2) {
+        const el: TimelineDefinition = {
+            lineDotIcon: <AutorenewIcon />,
+            content: <div>Required date: {required_date}</div>,
+            labelComponent: <div><span>{OrderStatus[2]}</span> <DoneIcon fontSize="small" htmlColor="green" /></div>
+        };
+        timelines.push(el);
+    }
+    if (order_status === 3) {
+        const el: TimelineDefinition = {
+            lineDotIcon: <SendIcon />,
+            content: <div>Somthing wend wrong</div>,
+            labelComponent: <div><span>{OrderStatus[3]}</span> <HighlightOffIcon fontSize="small" htmlColor="red" /></div>
+        };
+        timelines.push(el);
+    }
+    if (order_status === 4) {
+        const el: TimelineDefinition = {
+            lineDotIcon: <SendIcon />,
+            content: <div>Shipped date: {shipped_date}</div>,
+            labelComponent: <div><span>{OrderStatus[4]}</span> <DoneIcon fontSize="small" htmlColor="green" /></div>
+        };
+        timelines.push(el);
+    }
+
+    return timelines;
+}
+
 const DetailedInfoTab: React.FC<IDetailedInfoTabProps> = ({ visible, orderItem, orderDetails }) => {
     const noInfo = String.fromCharCode(8212);
-    const { order_status, order_date, required_date, shipped_date } = orderItem;
+    const timelines = getTimelines(orderItem);
     const { store_name, email, state, city, street, ordered_products } = orderDetails.info[0];
     return (
         <Box className={classNames({
@@ -21,6 +67,9 @@ const DetailedInfoTab: React.FC<IDetailedInfoTabProps> = ({ visible, orderItem, 
             "hidden": !visible
           })}>
             <Box className="box-section first">
+                <Timeline timelines={timelines} variant={TimelineVariant.Main} />
+            </Box>
+            <Box className="box-section">
                 <Grid container>
                     <Grid className="section-title" item xs={12}>Store Info</Grid>
                     <Grid item sm={5} xs={12}>
